@@ -167,5 +167,6 @@ map <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap K :Ack! "\b<C-R><C-W>\b"<Space>
 
 " Ale Configuration - auto js fix
-let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
+let g:ale_fixers = {'javascript': ['standard']}
+let g:ale_linters = {'javascript': ['standard']}
 let g:ale_fix_on_save = 1
