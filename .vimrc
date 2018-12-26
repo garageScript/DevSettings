@@ -1,3 +1,4 @@
+set encoding=utf-8
 let g:jsx_ext_required = 0
 
 set nocompatible " Stops vim from behaving in a strongly vi-compatible way.
@@ -15,10 +16,6 @@ Plugin 'VundleVim/Vundle.vim'
 " My Bundles here:
 "
 " original repos on github
-Plugin 'https://github.com/tpope/vim-vividchalk.git'
-Plugin 'https://github.com/Reewr/vim-monokai-phoenix'
-Plugin 'https://github.com/crusoexia/vim-monokai'
-Plugin 'flazz/vim-colorschemes'
 Plugin 'w0rp/ale'
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 Plugin 'mxw/vim-jsx'
@@ -35,9 +32,10 @@ Plugin 'https://github.com/tpope/vim-unimpaired'
 Plugin 'https://github.com/itspriddle/vim-marked'
 Plugin 'ap/vim-css-color' " Shows css colors
 Plugin 'pangloss/vim-javascript'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'reasonml-editor/vim-reason'
 Plugin 'ElmCast/elm-vim'
+Plugin 'tpope/vim-tbone'
+Plugin 'https://github.com/morhetz/gruvbox'
 
 call vundle#end()
 
@@ -50,10 +48,7 @@ call vundle#end()
 syntax on " Turn on Syntax Highlight
 filetype plugin indent on " Turn on file type detection
 
-" colorscheme vividchalk " Change Color scheme in ~/.vim/colors folder
-" colorscheme monokai
-let g:solarized_termcolors = 256
-colorscheme solarized
+colorscheme gruvbox
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/mobile/js/web/* " ctrlp ignores
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
@@ -164,6 +159,9 @@ map <C-l> <C-W>l
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
 nnoremap <Leader>f :Ack!<Space>
+
+" Press ,e to create new files
+map <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 " bind K to grep word under cursor
 nnoremap K :Ack! "\b<C-R><C-W>\b"<Space>
