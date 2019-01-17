@@ -36,6 +36,7 @@ Plugin 'reasonml-editor/vim-reason'
 Plugin 'ElmCast/elm-vim'
 Plugin 'tpope/vim-tbone'
 Plugin 'https://github.com/morhetz/gruvbox'
+Plugin 'ludovicchabant/vim-gutentags'
 
 call vundle#end()
 
@@ -136,7 +137,7 @@ set background=dark
 
 " Silver Searcher
 if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
+  let g:ackprg = 'ag --vimgrep --ignore=**.min.css --ignore=tags --ignore=**.min.js'
 endif
 
 " fzf fuzzy finder
